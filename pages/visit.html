@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visit — Kerio Valley</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html"><span>Kerio</span> Valley</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="places.html">Places</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="explore.html">Explore</a></li>
+          <li class="nav-item"><a class="nav-link" href="visit.html">Visit</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-2">
+          <li class="breadcrumb-item"><a href="index.html" class="text-kv-gold text-decoration-none">Home</a></li>
+          <li class="breadcrumb-item active text-white" aria-current="page">Visit</li>
+        </ol>
+      </nav>
+      <h1>Plan Your Visit</h1>
+      <p class="lead opacity-75">Fill in the form and we'll put together your perfect Kerio Valley trip</p>
+    </div>
+  </section>
+
+  <!-- Booking Form + Info -->
+  <section class="py-5" style="background:var(--kv-light)">
+    <div class="container">
+      <div class="row g-5 align-items-start">
+
+        <!-- Form -->
+        <div class="col-lg-7">
+          <div class="bg-white rounded-4 shadow p-4 p-md-5">
+            <h3 class="fw-bold mb-1">Booking Request</h3>
+            <p class="text-muted mb-4 small">We'll confirm availability and send a full itinerary within 24 hours.</p>
+
+            <form id="bookingForm" novalidate>
+              <!-- Personal details -->
+              <h6 class="text-uppercase fw-bold text-muted small mb-3" style="letter-spacing:.8px">Your Details</h6>
+              <div class="row g-3 mb-4">
+                <div class="col-sm-6">
+                  <label for="firstName" class="form-label">First name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="firstName" required placeholder="e.g. Meshack">
+                  <div class="invalid-feedback">Please enter your first name.</div>
+                </div>
+                <div class="col-sm-6">
+                  <label for="lastName" class="form-label">Last name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="lastName" required placeholder="e.g. Kipkemoi">
+                  <div class="invalid-feedback">Please enter your last name.</div>
+                </div>
+                <div class="col-sm-6">
+                  <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                  <input type="email" class="form-control" id="email" required placeholder="you@example.com">
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+                <div class="col-sm-6">
+                  <label for="phone" class="form-label">Phone number</label>
+                  <input type="tel" class="form-control" id="phone" placeholder="+254 7XX XXX XXX">
+                </div>
+              </div>
+
+              <!-- Trip details -->
+              <h6 class="text-uppercase fw-bold text-muted small mb-3" style="letter-spacing:.8px">Trip Details</h6>
+              <div class="row g-3 mb-4">
+                <div class="col-sm-6">
+                  <label for="arrivalDate" class="form-label">Arrival date <span class="text-danger">*</span></label>
+                  <input type="date" class="form-control" id="arrivalDate" required>
+                  <div class="invalid-feedback">Please select your arrival date.</div>
+                </div>
+                <div class="col-sm-6">
+                  <label for="departureDate" class="form-label">Departure date <span class="text-danger">*</span></label>
+                  <input type="date" class="form-control" id="departureDate" required>
+                  <div class="invalid-feedback">Please select your departure date.</div>
+                </div>
+                <div class="col-sm-4">
+                  <label for="adults" class="form-label">Adults <span class="text-danger">*</span></label>
+                  <input type="number" class="form-control" id="adults" min="1" max="20" value="2" required>
+                  <div class="invalid-feedback">At least 1 adult required.</div>
+                </div>
+                <div class="col-sm-4">
+                  <label for="children" class="form-label">Children</label>
+                  <input type="number" class="form-control" id="children" min="0" max="20" value="0">
+                </div>
+                <div class="col-sm-4">
+                  <label for="nationality" class="form-label">Nationality</label>
+                  <input type="text" class="form-control" id="nationality" placeholder="e.g. Kenyan">
+                </div>
+              </div>
+
+              <!-- Accommodation -->
+              <h6 class="text-uppercase fw-bold text-muted small mb-3" style="letter-spacing:.8px">Accommodation Preference</h6>
+              <div class="row g-3 mb-4">
+                <div class="col-12">
+                  <select class="form-select" id="accommodation" required>
+                    <option value="" disabled selected>Select accommodation type</option>
+                    <option value="camping">Camping (valley floor)</option>
+                    <option value="guesthouse">Local guesthouse — Tambach or Iten</option>
+                    <option value="homestay">Community homestay (Marakwet/Keiyo family)</option>
+                    <option value="lodge">Escarpment lodge — Iten area</option>
+                    <option value="none">Day trip only — no accommodation needed</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Experiences -->
+              <h6 class="text-uppercase fw-bold text-muted small mb-3" style="letter-spacing:.8px">Experiences Interested In</h6>
+              <div class="row g-2 mb-4">
+                <div class="col-sm-6"><div class="form-check"><input class="form-check-input" type="checkbox" id="expRun"><label class="form-check-label" for="expRun">Running with athletes (Iten)</label></div></div>
+                <div class="col-sm-6"><div class="form-check"><input class="form-check-input" type="checkbox" id="expCycle"><label class="form-check-label" for="expCycle">Escarpment cycling — Biretwo</label></div></div>
+                <div class="col-sm-6"><div class="form-check"><input class="form-check-input" type="checkbox" id="expHike"><label class="form-check-label" for="expHike">Gorge hiking</label></div></div>
+                <div class="col-sm-6"><div class="form-check"><input class="form-check-input" type="checkbox" id="expBirds"><label class="form-check-label" for="expBirds">Bird watching</label></div></div>
+                <div class="col-sm-6"><div class="form-check"><input class="form-check-input" type="checkbox" id="expCulture"><label class="form-check-label" for="expCulture">Cultural farm visit</label></div></div>
+                <div class="col-sm-6"><div class="form-check"><input class="form-check-input" type="checkbox" id="expPhoto"><label class="form-check-label" for="expPhoto">Photography tour</label></div></div>
+                <div class="col-sm-6"><div class="form-check"><input class="form-check-input" type="checkbox" id="expCross"><label class="form-check-label" for="expCross">Full valley crossing</label></div></div>
+                <div class="col-sm-6"><div class="form-check"><input class="form-check-input" type="checkbox" id="expRiver"><label class="form-check-label" for="expRiver">River safari (Chebloch)</label></div></div>
+              </div>
+
+              <!-- Budget & Notes -->
+              <h6 class="text-uppercase fw-bold text-muted small mb-3" style="letter-spacing:.8px">Budget &amp; Notes</h6>
+              <div class="row g-3 mb-4">
+                <div class="col-sm-6">
+                  <label for="budget" class="form-label">Estimated budget (KES per person)</label>
+                  <select class="form-select" id="budget">
+                    <option value="">— prefer not to say —</option>
+                    <option value="budget">Under KES 5,000</option>
+                    <option value="mid">KES 5,000 – 15,000</option>
+                    <option value="comfort">KES 15,000 – 30,000</option>
+                    <option value="premium">KES 30,000+</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label for="notes" class="form-label">Additional notes</label>
+                  <textarea class="form-control" id="notes" rows="3" placeholder="Dietary needs, accessibility requirements, special requests..."></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg w-100">Submit Booking Request</button>
+              <p class="text-muted small text-center mt-2 mb-0">We respond within 24 hours. No payment required at this stage.</p>
+            </form>
+          </div>
+        </div>
+
+        <!-- Sidebar info -->
+        <div class="col-lg-5">
+          <div class="mb-4 p-4 bg-white rounded-4 shadow-sm">
+            <h5 class="fw-bold mb-3">Getting Here</h5>
+            <p class="text-muted small mb-2"><strong>By road from Nairobi:</strong> Take the A104 to Eldoret, then the C51 to Iten — approx. 4.5 hours (310 km).</p>
+            <p class="text-muted small mb-2"><strong>Public transport:</strong> Matatus run Eldoret → Iten regularly. For the valley floor, take a Tambach-bound matatu from Iten.</p>
+            <p class="text-muted small mb-0"><strong>Nearest airport:</strong> Eldoret International Airport (ELD), ~65 km from Iten.</p>
+          </div>
+          <div class="mb-4 p-4 bg-white rounded-4 shadow-sm">
+            <h5 class="fw-bold mb-3">Best Time to Visit</h5>
+            <p class="text-muted small mb-2"><strong>Jan – Feb / Jun – Sep:</strong> Dry season — ideal for hiking, cycling, and photography. Clear skies, cool escarpment mornings.</p>
+            <p class="text-muted small mb-0"><strong>Mar – May / Oct – Dec:</strong> Long and short rains. The valley turns green, waterfalls appear, and birdlife peaks — but some roads get muddy.</p>
+          </div>
+          <div class="p-4 bg-white rounded-4 shadow-sm">
+            <h5 class="fw-bold mb-3">What to Pack</h5>
+            <ul class="text-muted small mb-0">
+              <li>Layers — escarpment mornings are cold (12–16 °C); valley floor hits 30 °C+</li>
+              <li>Sun protection and water (valley floor sun is intense)</li>
+              <li>Hiking shoes for gorge trails</li>
+              <li>Binoculars for birds and valley views</li>
+              <li>Camera with a wide lens for escarpment panoramas</li>
+              <li>Cash (KES) — ATMs only in Iten and Tambach</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4">
+    <div class="container text-center">
+      <p class="footer-brand mb-1"><span>Kerio</span> Valley</p>
+      <p class="mb-1 small">Elgeyo-Marakwet County, Kenya</p>
+      <p class="mb-0 small">
+        <a href="about.html">About</a> &middot;
+        <a href="contact.html">Contact</a> &middot;
+        <a href="visit.html">Book a Visit</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
