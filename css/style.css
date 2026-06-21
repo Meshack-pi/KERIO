@@ -1,0 +1,191 @@
+:root {
+  --kv-green:  #2d6a4f;
+  --kv-gold:   #d4a373;
+  --kv-blue:   #1a6ea0;
+  --kv-dark:   #1a1a2e;
+  --kv-light:  #f0f4f0;
+}
+
+/* ── Global ── */
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #333;
+}
+
+a { color: var(--kv-green); }
+a:hover { color: var(--kv-gold); }
+
+/* ── Navbar ── */
+.navbar-brand span { color: var(--kv-gold); }
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover { color: var(--kv-gold) !important; }
+
+/* ── Hero ── */
+.hero {
+  min-height: 92vh;
+  background: url('https://safari254.com/wp-content/uploads/2018/08/Kerio-Valley_winding-roads-1024x560.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content { position: relative; z-index: 1; }
+
+.hero h1 { font-size: clamp(2.4rem, 6vw, 5rem); font-weight: 800; letter-spacing: -1px; }
+.hero .lead { font-size: clamp(1rem, 2vw, 1.35rem); }
+
+/* ── Section headers ── */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--kv-gold);
+  border-radius: 2px;
+  margin-top: 6px;
+}
+
+/* ── Page header banner ── */
+.page-header {
+  background: linear-gradient(120deg, var(--kv-dark) 0%, var(--kv-green) 100%);
+  padding: 80px 0 60px;
+  color: #fff;
+}
+
+.page-header h1 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; }
+
+/* ── Cards ── */
+.card { border: none; box-shadow: 0 4px 20px rgba(0,0,0,.08); transition: transform .25s, box-shadow .25s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,.14); }
+.card-img-top { height: 220px; object-fit: cover; }
+
+/* ── Gallery flexbox grid ── */
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.gallery-item {
+  flex: 1 1 260px;
+  max-width: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.1);
+  position: relative;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  transition: transform .35s;
+}
+
+.gallery-item:hover img { transform: scale(1.05); }
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.65) 0%, transparent 55%);
+  display: flex;
+  align-items: flex-end;
+  padding: 14px;
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-overlay span { color: #fff; font-weight: 600; font-size: .95rem; }
+
+/* ── Stats strip ── */
+.stat-card {
+  text-align: center;
+  padding: 28px 20px;
+  background: var(--kv-light);
+  border-radius: 12px;
+}
+
+.stat-number { font-size: 2.6rem; font-weight: 800; color: var(--kv-green); }
+.stat-label  { color: #666; font-size: .9rem; text-transform: uppercase; letter-spacing: .5px; }
+
+/* ── Forms ── */
+.form-control:focus, .form-select:focus {
+  border-color: var(--kv-green);
+  box-shadow: 0 0 0 .2rem rgba(45,106,79,.2);
+}
+
+.btn-primary {
+  background: var(--kv-green);
+  border-color: var(--kv-green);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background: #1e4d38;
+  border-color: #1e4d38;
+}
+
+.btn-outline-primary {
+  color: var(--kv-green);
+  border-color: var(--kv-green);
+}
+
+.btn-outline-primary:hover {
+  background: var(--kv-green);
+  border-color: var(--kv-green);
+  color: #fff;
+}
+
+/* ── Footer ── */
+footer {
+  background: var(--kv-dark);
+  color: #ccc;
+}
+
+footer a { color: var(--kv-gold); text-decoration: none; }
+footer a:hover { color: #fff; }
+footer .footer-brand { font-size: 1.4rem; font-weight: 700; color: #fff; }
+footer .footer-brand span { color: var(--kv-gold); }
+
+/* ── Utility ── */
+.bg-kv-green   { background-color: var(--kv-green) !important; }
+.bg-kv-gold    { background-color: var(--kv-gold)  !important; }
+.text-kv-green { color: var(--kv-green) !important; }
+.text-kv-gold  { color: var(--kv-gold)  !important; }
+
+/* ── Explore activity cards ── */
+.activity-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--kv-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin: 0 auto 1rem;
+}
+
+/* ── Places feature image ── */
+.place-img {
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ── Responsive tweaks ── */
+@media (max-width: 576px) {
+  .gallery-item { flex: 1 1 100%; max-width: 100%; }
+  .hero { min-height: 70vh; }
+}
