@@ -23,7 +23,7 @@ a:hover { color: var(--kv-gold); }
 /* ── Hero ── */
 .hero {
   min-height: 92vh;
-  background: url('https://safari254.com/wp-content/uploads/2018/08/Kerio-Valley_winding-roads-1024x560.jpg') center/cover no-repeat;
+  background: url('/images/kerio_valley.webp') center/cover no-repeat;
   display: flex;
   align-items: center;
   position: relative;
