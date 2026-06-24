@@ -25,6 +25,8 @@ if (bookingForm) {
     btn.classList.replace('btn-primary', 'btn-success');
     bookingForm.insertAdjacentHTML('afterend',
       '<div class="alert alert-success mt-3">Thank you! We will be in touch within 24 hours.</div>');
+    bookingForm.reset();
+    bookingForm.classList.remove('was-validated');
   });
 }
 
