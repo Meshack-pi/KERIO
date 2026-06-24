@@ -43,6 +43,8 @@ if (contactForm) {
     btn.classList.replace('btn-primary', 'btn-success');
     contactForm.insertAdjacentHTML('afterend',
       '<div class="alert alert-success mt-3">Message received. We\'ll reply soon!</div>');
+    contactForm.reset();
+    contactForm.classList.remove('was-validated');
   });
 }
 
