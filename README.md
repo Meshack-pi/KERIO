@@ -5,6 +5,22 @@ A responsive static website that showcases the raw, breathtaking beauty of Kerio
 
 ---
 
+## Pages
+
+| File | Title |
+|------|-------|
+| `index.html` | Home — Kerio Valley |
+| `about.html` | About |
+| `explore.html` | Explore |
+| `places.html` | Places |
+| `culture.html` | Culture & People |
+| `gallery.html` | Gallery |
+| `viewpoint.html` | Iten Viewpoint |
+| `visit.html` | Visit |
+| `contact.html` | Contact |
+
+---
+
 ## Tech Stack
 
 - **HTML5** — semantic, accessible markup
